@@ -8,6 +8,7 @@ import io.cucumber.junit.CucumberOptions;
 @CucumberOptions(
 		features={"src/test/resources"},
 		glue= {"stepDefs"},
+		tags= "@compra",
 		plugin= {"pretty"}
 		)
 
