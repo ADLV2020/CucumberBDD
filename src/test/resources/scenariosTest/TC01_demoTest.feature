@@ -1,10 +1,10 @@
-@scenarioTest
+@SceTest
 Feature: Acceder al sitio para agregar un producto y finalizar el proceso de compra, completando el formulario.
   COMO un usuario final del merchant portal
   QUIERO acceder al sitio y seleccionar un producto
   PARA finalizar el proceso y obtener el numero de orden
   
-  	@regression @compra
+  	@Regression @Compra
 	  Scenario: Se agrega un producto a la cesta de compra
 	  	Given accedo al Store del sitio de demoblaze
 	    And ingreso a la categoria Phones del home page
