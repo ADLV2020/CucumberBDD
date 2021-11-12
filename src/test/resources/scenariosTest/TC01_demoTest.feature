@@ -11,5 +11,6 @@ Feature: Acceder al sitio para agregar un producto y finalizar el proceso de com
 	    And selecciono el primer telefono de la lista
 	    When lo agrego al carro de compra
 	    And accedo al carro de compra
+	    When se agrego el producto a la grilla
 	    And completo los datos requeridos de la compra
 	    Then se confirma el proceso de compra
