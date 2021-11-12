@@ -4,11 +4,11 @@ import org.openqa.selenium.Alert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
-public class DemoPage {
+public class DemoSelPage {
 
 	// Constructor
 	WebDriver driver;	
-	public DemoPage(WebDriver driver) {
+	public DemoSelPage(WebDriver driver) {
 		this.driver=driver;
 	}
 	
