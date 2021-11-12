@@ -7,22 +7,22 @@ import enums.ContextData;
 
 public class SceContext {
 
-	private Map< String , Object > sceContext;
+	private Map< String , Object > scnContext;
 	
-	public SceContext () {
-		sceContext = new HashMap<>();
+	public SceContext() {
+		scnContext = new HashMap<>();
 	}
 	
-	public void setContext( ContextData key , Object value ) {
-		sceContext.put( key.toString() , value );
+	public void setContext(ContextData key, Object value) {
+		scnContext.put(key.toString(), value);
 	}
 	
-	public Object getContext( ContextData key ) {
-		return sceContext.get( key.toString() );
+	public Object getContext(ContextData key) {
+		return scnContext.get(key.toString());
 	}
 	
-	public Boolean isContains( ContextData key ) {
-		return sceContext.containsKey( key.toString() );
+	public Boolean isContains(ContextData key) {
+		return scnContext.containsKey(key.toString());
 	}
 	
 }

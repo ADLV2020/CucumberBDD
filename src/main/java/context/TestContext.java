@@ -6,13 +6,13 @@ import managers.WebDriverMng;
 public class TestContext {
 
 	private WebDriverMng driverMng;
-	private PageObjectMng poMng;
-	public SceContext sceContext;
+	private PageObjectMng pageObjMng;
+	public SceContext scnContext;
 	
 	public TestContext() {
 		driverMng = new WebDriverMng();
-		poMng = new PageObjectMng(driverMng.getDriver());
-		sceContext = new SceContext();
+		pageObjMng = new PageObjectMng(driverMng.getDriver());
+		scnContext = new SceContext();
 	}
 	
 	public WebDriverMng getDriverMng() {
@@ -20,11 +20,11 @@ public class TestContext {
 	}
 	
 	public PageObjectMng getPageObjectMng() {
-		return poMng;
+		return pageObjMng;
 	}
 	
 	public SceContext getSceContext() {
-		return sceContext;
+		return scnContext;
 	}
 	
 }
