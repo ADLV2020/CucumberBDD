@@ -13,7 +13,6 @@ public class TC01_FirstTest {
 	private static WebDriver driver;
 
 	public static void main(String[] args) throws InterruptedException {
-
 		
 		System.out.println("First test");
 		
