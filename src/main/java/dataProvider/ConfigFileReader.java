@@ -11,14 +11,13 @@ import enums.EnvironmentType;
 
 public class ConfigFileReader {
 
-
 	private Properties properties;
 	private final String propertyFilePath = ".\\configs\\Configs.properties";
 	
-	public ConfigFileReader () {
+	public ConfigFileReader() {
 		BufferedReader reader;
 		try {
-			reader = new BufferedReader( new FileReader ( propertyFilePath ) );
+			reader = new BufferedReader(new FileReader(propertyFilePath));
 			properties = new Properties();
 			try {
 				properties.load(reader);
@@ -32,27 +31,27 @@ public class ConfigFileReader {
 		}
 	}
 	
-	public String getDriverPath () {
+	public String getDriverPath() {
 		String driverPath = properties.getProperty("DriverPath");
-		if ( driverPath  != null ) return driverPath;
+		if (driverPath != null) return driverPath;
 		else throw new RuntimeException("Err. Path for driver is empty.");
 	}
 	
-	public String getDriverType () {
+	public String getDriverType() {
 		String driverType = properties.getProperty("DriverType");
-		if ( driverType  != null ) return driverType;
+		if (driverType != null) return driverType;
 		else throw new RuntimeException("Err. Type for driver is empty.");
 	}
 	
-	public String getURLdemo () {
+	public String getURLdemo() {
 		String URLdemo = properties.getProperty("URLdemo");
-		if ( URLdemo  != null ) return URLdemo;
+		if (URLdemo != null) return URLdemo;
 		else throw new RuntimeException("Err. URLdemo is empty or not defined.");
 	}
 	
-	public long getWaitTime () {
+	public long getWaitTime() {
 		String waitTime = properties.getProperty("WaitTime");
-		if ( waitTime  != null ) {
+		if (waitTime != null) {
 			try {
 				return Long.parseLong(waitTime);
 			} catch (NumberFormatException m) {
@@ -64,30 +63,55 @@ public class ConfigFileReader {
 	
 	public BrowserType getBrowser() {
 		String browserType = properties.getProperty("BrowserType");
-		if ( browserType != null ) {
-			if ( browserType.equalsIgnoreCase("chrome") ) return BrowserType.CHROME;
-			else if ( browserType.equalsIgnoreCase("firefox") ) return BrowserType.FIREFOX;
-			else if ( browserType.equalsIgnoreCase("iexplorer") ) return BrowserType.INTERNETEXPLORER;
+		if (browserType != null) {
+			if (browserType.equalsIgnoreCase("chrome")) return BrowserType.CHROME;
+			else if (browserType.equalsIgnoreCase("firefox")) return BrowserType.FIREFOX;
+			else if (browserType.equalsIgnoreCase("iexplorer")) return BrowserType.INTERNETEXPLORER;
 			else return BrowserType.CHROME;
 		} else throw new RuntimeException("Err. Browser type is not defined. Verify. ");
 	}
 	
 	public EnvironmentType getEnvironment() {
 		String environment = properties.getProperty("Environment");
-		if ( environment != null ) {
-			if ( environment.equalsIgnoreCase("local") ) return EnvironmentType.LOCAL;
-			else if ( environment.equalsIgnoreCase("remote") ) return EnvironmentType.REMOTE;
-			else if ( environment.equalsIgnoreCase("headless") ) return EnvironmentType.HEADLESS;
+		if (environment != null) {
+			if (environment.equalsIgnoreCase("local")) return EnvironmentType.LOCAL;
+			else if (environment.equalsIgnoreCase("remote")) return EnvironmentType.REMOTE;
+			else if (environment.equalsIgnoreCase("headless")) return EnvironmentType.HEADLESS;
 			else return EnvironmentType.LOCAL;
 		} else throw new RuntimeException("Err. Environment type is not defined. Verify. ");
 	}
 	
 	public Boolean getBowserSize() {
 		String browserSize = properties.getProperty("BrowserSize");
-		if ( browserSize != null ) {
+		if (browserSize != null) {
 			if (browserSize.equalsIgnoreCase("false") ) return Boolean.valueOf(false);
 			else return Boolean.valueOf(true);
 		} else throw new RuntimeException("Err. Bowser Size is not defined. Verify. ");
+	}
+	
+	public String getTestData() {
+		String testData = properties.getProperty("testDataPath");
+		if (testData != null) return testData;
+		else throw new RuntimeException("Test Data Resources not specified in the properties file. Verify. ");
+	}
+	
+	public String getTestDataFile_Customer(String fileName) {
+		switch (fileName) {
+			case "customer" :
+				String testDataFile = properties.getProperty("fileCustomer");
+				if (testDataFile != null) return testDataFile;
+				else throw new RuntimeException("Test Data ");
+			case "other" :
+				throw new RuntimeException("Err case for Test Data File");
+			default :
+				throw new RuntimeException("Err Case for Test Data File");
+		}
+	}
+	
+	public String getReportConfPath() {
+		String reportConf = properties.getProperty("reportConfigPath");
+		if (reportConf != null) return reportConf;
+		else throw new RuntimeException("Err. Report Config path isn´t defined. Verify. ");
 	}
 	
 }
