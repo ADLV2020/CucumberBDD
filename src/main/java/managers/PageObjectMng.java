@@ -17,11 +17,11 @@ public class PageObjectMng {
 	ProductStorePage storePage;
 	ProductPurchasePage purchasePage;
 	// PageObject Creation Method
-	public ProductStorePage getProductStorePage () {
-		return ( storePage == null ) ? storePage = new ProductStorePage(driver) : storePage;
+	public ProductStorePage getProductStorePage() {
+		return (storePage == null) ? storePage = new ProductStorePage(driver) : storePage;
 	}
-	public ProductPurchasePage getProductPurchasePage () {
-		return ( purchasePage == null ) ? purchasePage = new ProductPurchasePage(driver) : purchasePage;
+	public ProductPurchasePage getProductPurchasePage() {
+		return (purchasePage == null) ? purchasePage = new ProductPurchasePage(driver) : purchasePage;
 	}
 
 }
