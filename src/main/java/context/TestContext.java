@@ -7,12 +7,12 @@ public class TestContext {
 
 	private WebDriverMng driverMng;
 	private PageObjectMng pageObjMng;
-	public SceContext scnContext;
+	public ScnContext scnContext;
 	
 	public TestContext() {
 		driverMng = new WebDriverMng();
 		pageObjMng = new PageObjectMng(driverMng.getDriver());
-		scnContext = new SceContext();
+		scnContext = new ScnContext();
 	}
 	
 	public WebDriverMng getDriverMng() {
@@ -23,7 +23,7 @@ public class TestContext {
 		return pageObjMng;
 	}
 	
-	public SceContext getSceContext() {
+	public ScnContext getSceContext() {
 		return scnContext;
 	}
 	

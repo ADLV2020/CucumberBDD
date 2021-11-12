@@ -5,11 +5,11 @@ import java.util.Map;
 
 import enums.ContextData;
 
-public class SceContext {
+public class ScnContext {
 
 	private Map< String , Object > scnContext;
 	
-	public SceContext() {
+	public ScnContext() {
 		scnContext = new HashMap<>();
 	}
 	
