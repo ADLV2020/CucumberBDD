@@ -11,7 +11,6 @@ import enums.EnvironmentType;
 
 public class ConfigFileReader {
 
-
 	private Properties properties;
 	private final String propertyFilePath = ".\\configs\\Configs.properties";
 	
@@ -88,6 +87,31 @@ public class ConfigFileReader {
 			if (browserSize.equalsIgnoreCase("false") ) return Boolean.valueOf(false);
 			else return Boolean.valueOf(true);
 		} else throw new RuntimeException("Err. Bowser Size is not defined. Verify. ");
+	}
+	
+	public String getTestData() {
+		String testData = properties.getProperty("testDataPath");
+		if ( testData != null ) return testData;
+		else throw new RuntimeException("Test Data Resources not specified in the properties file. Verify. ");
+	}
+	
+	public String getTestDataFile_Customer(String fileName) {
+		switch ( fileName ) {
+			case "customer" :
+				String testDataFile = properties.getProperty("fileCustomer");
+				if ( testDataFile != null ) return testDataFile;
+				else throw new RuntimeException("Test Data ");
+			case "other" :
+				throw new RuntimeException("Err case for Test Data File");
+			default :
+				throw new RuntimeException("Err Case for Test Data File");
+		}
+	}
+	
+	public String getReportConfPath() {
+		String reportConf = properties.getProperty("reportConfigPath");
+		if ( reportConf != null ) return reportConf;
+		else throw new RuntimeException("Err. Report Config path isn´t defined. Verify. ");
 	}
 	
 }
